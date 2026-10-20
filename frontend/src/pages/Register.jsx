@@ -52,9 +52,9 @@ const Register = ({ onLoginSuccess }) => {
   return (
     <div className="container" style={{ maxWidth: "540px", paddingTop: "2rem" }}>
       <div className="glass-panel" style={{ padding: "2.5rem" }}>
-        <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-          <h1 className="page-title" style={{ fontSize: "1.85rem" }}>Create Account</h1>
-          <p className="page-subtitle">Join InstiFee Pro as Student or Administrator</p>
+        <div style={{ textAlign: "center", marginBottom: "1.75rem" }}>
+          <h1 className="page-title" style={{ fontSize: "1.6rem" }}>New Registration</h1>
+          <p className="page-subtitle">Register new student or accountant account</p>
         </div>
 
         {error && (
@@ -79,12 +79,12 @@ const Register = ({ onLoginSuccess }) => {
           </div>
 
           <div className="form-group">
-            <label className="form-label">Email Address *</label>
+            <label className="form-label">Email / Username *</label>
             <input
-              type="email"
+              type="text"
               name="email"
               className="form-input"
-              placeholder="rahul@student.edu"
+              placeholder="e.g. rahul123 or rahul@gmail.com"
               value={formData.email}
               onChange={handleChange}
               required
@@ -96,9 +96,8 @@ const Register = ({ onLoginSuccess }) => {
             <input
               type="password"
               name="password"
-              minLength={6}
               className="form-input"
-              placeholder="Minimum 6 characters"
+              placeholder="Enter password"
               value={formData.password}
               onChange={handleChange}
               required

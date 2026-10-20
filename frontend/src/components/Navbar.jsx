@@ -24,9 +24,9 @@ const Navbar = ({ user, onLogout }) => {
     <nav className="navbar">
       <Link to="/" className="nav-brand">
         <div className="brand-icon">
-          <Wallet size={20} />
+          <Wallet size={18} />
         </div>
-        <span>InstiFee Pro</span>
+        <span>College Fee Portal</span>
       </Link>
 
       <div className="nav-links">

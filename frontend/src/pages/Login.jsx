@@ -43,9 +43,9 @@ const Login = ({ onLoginSuccess }) => {
   return (
     <div className="container" style={{ maxWidth: "480px", paddingTop: "3rem" }}>
       <div className="glass-panel" style={{ padding: "2.5rem" }}>
-        <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-          <h1 className="page-title" style={{ fontSize: "1.85rem" }}>Sign In</h1>
-          <p className="page-subtitle">InstiFee Pro • Fee Collection & Receipt Management</p>
+        <div style={{ textAlign: "center", marginBottom: "1.75rem" }}>
+          <h1 className="page-title" style={{ fontSize: "1.6rem" }}>Fee Management Login</h1>
+          <p className="page-subtitle">Student & Accounts Department Login</p>
         </div>
 
         {error && (
@@ -57,12 +57,12 @@ const Login = ({ onLoginSuccess }) => {
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label className="form-label">Email Address</label>
-            <div style={{ position: "relative" }}>
+            <label className="form-label">Email or Username</label>
+            <div>
               <input
-                type="email"
+                type="text"
                 className="form-input"
-                placeholder="name@institute.edu"
+                placeholder="Enter email or username"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
