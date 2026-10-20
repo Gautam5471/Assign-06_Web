@@ -120,43 +120,43 @@ const FeeList = () => {
               <div>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.75rem" }}>
                   <div>
-                    <h3 style={{ fontSize: "1.2rem", fontWeight: 700, color: "#fff" }}>{fee.course}</h3>
-                    <span style={{ fontSize: "0.8rem", color: "var(--accent-cyan)", fontFamily: "var(--font-mono)" }}>
-                      AY: {fee.academicYear}
+                    <h3 style={{ fontSize: "1.2rem", fontWeight: 700, color: "#0f172a" }}>{fee.course}</h3>
+                    <span style={{ fontSize: "0.8rem", color: "#2563eb", fontWeight: 600 }}>
+                      Academic Year: {fee.academicYear}
                     </span>
                   </div>
                   <div style={{ textAlign: "right" }}>
-                    <div style={{ fontSize: "1.4rem", fontWeight: 800, color: "#38bdf8" }}>
+                    <div style={{ fontSize: "1.4rem", fontWeight: 800, color: "#2563eb" }}>
                       ₹{fee.totalAmount.toLocaleString("en-IN")}
                     </div>
-                    <span style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>Total Course Fee</span>
+                    <span style={{ fontSize: "0.75rem", color: "#64748b" }}>Total Course Fee</span>
                   </div>
                 </div>
 
-                <div style={{ background: "rgba(255, 255, 255, 0.02)", borderRadius: "8px", padding: "0.75rem 1rem", margin: "1rem 0", border: "1px solid var(--border-color)" }}>
-                  <div style={{ fontSize: "0.78rem", fontWeight: 600, color: "var(--text-muted)", textTransform: "uppercase", marginBottom: "0.5rem" }}>
+                <div style={{ background: "#f8fafc", borderRadius: "8px", padding: "0.75rem 1rem", margin: "1rem 0", border: "1px solid var(--border)" }}>
+                  <div style={{ fontSize: "0.78rem", fontWeight: 700, color: "#475569", textTransform: "uppercase", marginBottom: "0.5rem" }}>
                     Fee Heads Breakdown
                   </div>
                   {fee.feeHeads?.map((head, idx) => (
-                    <div key={idx} style={{ display: "flex", justifyContent: "space-between", fontSize: "0.85rem", padding: "0.25rem 0", color: "#cbd5e1" }}>
+                    <div key={idx} style={{ display: "flex", justifyContent: "space-between", fontSize: "0.85rem", padding: "0.25rem 0", color: "#334155" }}>
                       <span>{head.title}</span>
-                      <span style={{ fontWeight: 600, color: "#f8fafc" }}>₹{head.amount.toLocaleString("en-IN")}</span>
+                      <span style={{ fontWeight: 600, color: "#0f172a" }}>₹{head.amount.toLocaleString("en-IN")}</span>
                     </div>
                   ))}
                 </div>
 
-                <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.82rem", color: "var(--text-muted)", marginBottom: "1.25rem" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.82rem", color: "#64748b", marginBottom: "1.25rem" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
                     <Calendar size={14} />
                     <span>Due: {new Date(fee.dueDate).toLocaleDateString()}</span>
                   </div>
                   <div>
-                    Late Fee: <span style={{ color: "#fb7185", fontWeight: 600 }}>₹{fee.lateFeePerDay}/day</span>
+                    Late Fee: <span style={{ color: "#b91c1c", fontWeight: 600 }}>₹{fee.lateFeePerDay}/day</span>
                   </div>
                 </div>
               </div>
 
-              <div style={{ display: "flex", gap: "0.5rem", borderTop: "1px solid var(--border-color)", paddingTop: "1rem" }}>
+              <div style={{ display: "flex", gap: "0.5rem", borderTop: "1px solid var(--border)", paddingTop: "1rem" }}>
                 <Link to={`/admin/fees/${fee._id}/edit`} className="btn btn-secondary btn-sm" style={{ flex: 1 }}>
                   <Edit2 size={14} />
                   <span>Edit</span>

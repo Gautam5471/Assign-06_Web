@@ -134,7 +134,7 @@ const AdminDashboard = () => {
 
       {/* Mode-wise Collection Breakdown */}
       <div className="glass-panel" style={{ padding: "1.75rem", marginBottom: "2rem" }}>
-        <h3 style={{ fontSize: "1.1rem", fontWeight: 700, marginBottom: "1.25rem", color: "#f1f5f9" }}>
+        <h3 style={{ fontSize: "1.1rem", fontWeight: 700, marginBottom: "1.25rem", color: "#0f172a" }}>
           Payment Mode Distribution
         </h3>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "1rem" }}>
@@ -144,13 +144,13 @@ const AdminDashboard = () => {
                 key={mode}
                 style={{
                   padding: "1rem 1.25rem",
-                  background: "rgba(255, 255, 255, 0.03)",
-                  borderRadius: "10px",
-                  border: "1px solid var(--border-color)",
+                  background: "#f8fafc",
+                  borderRadius: "8px",
+                  border: "1px solid var(--border)",
                 }}
               >
-                <div style={{ fontSize: "0.8rem", color: "var(--text-muted)", textTransform: "uppercase" }}>{mode}</div>
-                <div style={{ fontSize: "1.35rem", fontWeight: 800, marginTop: "0.25rem", color: "#e2e8f0" }}>
+                <div style={{ fontSize: "0.8rem", color: "#475569", textTransform: "uppercase", fontWeight: 600 }}>{mode}</div>
+                <div style={{ fontSize: "1.35rem", fontWeight: 800, marginTop: "0.25rem", color: "#0f172a" }}>
                   ₹{amt.toLocaleString("en-IN")}
                 </div>
               </div>
@@ -162,10 +162,10 @@ const AdminDashboard = () => {
       <div className="glass-panel" style={{ padding: "1.75rem", marginBottom: "2rem" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.25rem", flexWrap: "wrap", gap: "1rem" }}>
           <div>
-            <h3 style={{ fontSize: "1.15rem", fontWeight: 700, color: "#fda4af" }}>
+            <h3 style={{ fontSize: "1.15rem", fontWeight: 700, color: "#b91c1c" }}>
               Overdue Fee Defaulters ({filteredDefaulters.length})
             </h3>
-            <p style={{ fontSize: "0.85rem", color: "var(--text-muted)" }}>
+            <p style={{ fontSize: "0.85rem", color: "#64748b" }}>
               Students who have past-due pending balances subject to daily late fees
             </p>
           </div>
@@ -206,15 +206,15 @@ const AdminDashboard = () => {
               <tbody>
                 {filteredDefaulters.map((d) => (
                   <tr key={d.studentId}>
-                    <td style={{ fontWeight: 600, color: "#fff" }}>{d.name}</td>
-                    <td><span style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem" }}>{d.rollNumber}</span></td>
+                    <td style={{ fontWeight: 600, color: "#0f172a" }}>{d.name}</td>
+                    <td><span style={{ fontFamily: "monospace", fontSize: "0.85rem", color: "#334155" }}>{d.rollNumber}</span></td>
                     <td>{d.course}</td>
                     <td>{new Date(d.dueDate).toLocaleDateString()}</td>
                     <td>
                       <span className="badge badge-unpaid">+{d.overdueDays} days</span>
                     </td>
                     <td>₹{d.paidAmount.toLocaleString("en-IN")}</td>
-                    <td style={{ color: "#fb7185", fontWeight: 700 }}>
+                    <td style={{ color: "#b91c1c", fontWeight: 700 }}>
                       ₹{d.pendingAmount.toLocaleString("en-IN")}
                     </td>
                     <td>
@@ -233,7 +233,7 @@ const AdminDashboard = () => {
 
       {/* Recent Collections */}
       <div className="glass-panel" style={{ padding: "1.75rem" }}>
-        <h3 style={{ fontSize: "1.15rem", fontWeight: 700, marginBottom: "1.25rem", color: "#f1f5f9" }}>
+        <h3 style={{ fontSize: "1.15rem", fontWeight: 700, marginBottom: "1.25rem", color: "#0f172a" }}>
           Recent Transactions & Receipts
         </h3>
 
@@ -260,16 +260,16 @@ const AdminDashboard = () => {
                 {data.recentPayments.map((p) => (
                   <tr key={p._id}>
                     <td>
-                      <span style={{ fontFamily: "var(--font-mono)", color: "#60a5fa", fontWeight: 600 }}>
+                      <span style={{ fontFamily: "monospace", color: "#2563eb", fontWeight: 600 }}>
                         {p.receiptNo}
                       </span>
                     </td>
                     <td>{new Date(p.paymentDate).toLocaleDateString()}</td>
-                    <td style={{ fontWeight: 600, color: "#fff" }}>{p.student?.name}</td>
+                    <td style={{ fontWeight: 600, color: "#0f172a" }}>{p.student?.name}</td>
                     <td>{p.student?.rollNumber}</td>
                     <td>{p.student?.course}</td>
                     <td><span className="badge badge-paid">{p.paymentMode}</span></td>
-                    <td style={{ color: "#34d399", fontWeight: 700 }}>
+                    <td style={{ color: "#059669", fontWeight: 700 }}>
                       ₹{p.amountPaid.toLocaleString("en-IN")}
                     </td>
                     <td>

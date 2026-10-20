@@ -91,31 +91,31 @@ const StudentPortal = ({ user }) => {
         </div>
 
         {/* Financial Highlights */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "1rem", marginTop: "1.75rem", borderTop: "1px solid var(--border-color)", paddingTop: "1.5rem" }}>
-          <div style={{ background: "rgba(255,255,255,0.02)", padding: "1.2rem", borderRadius: "10px" }}>
-            <div style={{ fontSize: "0.8rem", color: "var(--text-muted)", textTransform: "uppercase" }}>Total Course Fee</div>
-            <div style={{ fontSize: "1.4rem", fontWeight: 800 }}>₹{summary.baseFee.toLocaleString("en-IN")}</div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "1rem", marginTop: "1.75rem", borderTop: "1px solid var(--border)", paddingTop: "1.5rem" }}>
+          <div style={{ background: "#f8fafc", padding: "1.2rem", borderRadius: "8px", border: "1px solid var(--border)" }}>
+            <div style={{ fontSize: "0.8rem", color: "#64748b", textTransform: "uppercase", fontWeight: 600 }}>Total Course Fee</div>
+            <div style={{ fontSize: "1.4rem", fontWeight: 800, color: "#0f172a" }}>₹{summary.baseFee.toLocaleString("en-IN")}</div>
           </div>
 
           {summary.lateFee > 0 && (
-            <div style={{ background: "rgba(244, 63, 94, 0.05)", padding: "1.2rem", borderRadius: "10px", border: "1px solid rgba(244, 63, 94, 0.2)" }}>
-              <div style={{ fontSize: "0.8rem", color: "#fda4af", textTransform: "uppercase" }}>Late Fine Accrued</div>
-              <div style={{ fontSize: "1.4rem", fontWeight: 800, color: "#fb7185" }}>
+            <div style={{ background: "#fef2f2", padding: "1.2rem", borderRadius: "8px", border: "1px solid #fecaca" }}>
+              <div style={{ fontSize: "0.8rem", color: "#991b1b", textTransform: "uppercase", fontWeight: 600 }}>Late Fine Accrued</div>
+              <div style={{ fontSize: "1.4rem", fontWeight: 800, color: "#dc2626" }}>
                 +₹{summary.lateFee.toLocaleString("en-IN")}
               </div>
             </div>
           )}
 
-          <div style={{ background: "rgba(16, 185, 129, 0.05)", padding: "1.2rem", borderRadius: "10px", border: "1px solid rgba(16, 185, 129, 0.2)" }}>
-            <div style={{ fontSize: "0.8rem", color: "#6ee7b7", textTransform: "uppercase" }}>Total Paid</div>
-            <div style={{ fontSize: "1.4rem", fontWeight: 800, color: "#34d399" }}>
+          <div style={{ background: "#ecfdf5", padding: "1.2rem", borderRadius: "8px", border: "1px solid #a7f3d0" }}>
+            <div style={{ fontSize: "0.8rem", color: "#065f46", textTransform: "uppercase", fontWeight: 600 }}>Total Paid</div>
+            <div style={{ fontSize: "1.4rem", fontWeight: 800, color: "#059669" }}>
               ₹{summary.totalPaid.toLocaleString("en-IN")}
             </div>
           </div>
 
-          <div style={{ background: "rgba(245, 158, 11, 0.05)", padding: "1.2rem", borderRadius: "10px", border: "1px solid rgba(245, 158, 11, 0.2)" }}>
-            <div style={{ fontSize: "0.8rem", color: "#fde047", textTransform: "uppercase" }}>Pending Balance</div>
-            <div style={{ fontSize: "1.55rem", fontWeight: 800, color: "#fbbf24" }}>
+          <div style={{ background: "#fffbeb", padding: "1.2rem", borderRadius: "8px", border: "1px solid #fde68a" }}>
+            <div style={{ fontSize: "0.8rem", color: "#92400e", textTransform: "uppercase", fontWeight: 600 }}>Pending Balance</div>
+            <div style={{ fontSize: "1.55rem", fontWeight: 800, color: "#d97706" }}>
               ₹{summary.pendingAmount.toLocaleString("en-IN")}
             </div>
           </div>
@@ -123,15 +123,15 @@ const StudentPortal = ({ user }) => {
 
         {/* Course Fee Heads Breakdown */}
         {feeStructure?.feeHeads && feeStructure.feeHeads.length > 0 && (
-          <div style={{ marginTop: "1.75rem", paddingTop: "1.25rem", borderTop: "1px dashed var(--border-color)" }}>
-            <div style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--text-muted)", textTransform: "uppercase", marginBottom: "0.75rem" }}>
+          <div style={{ marginTop: "1.75rem", paddingTop: "1.25rem", borderTop: "1px dashed var(--border)" }}>
+            <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "#475569", textTransform: "uppercase", marginBottom: "0.75rem" }}>
               Fee Head Component Breakdown
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "0.75rem" }}>
               {feeStructure.feeHeads.map((h, i) => (
-                <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "0.6rem 0.9rem", background: "rgba(255,255,255,0.02)", borderRadius: "8px", fontSize: "0.85rem" }}>
-                  <span style={{ color: "var(--text-secondary)" }}>{h.title}</span>
-                  <span style={{ fontWeight: 600, color: "#fff" }}>₹{h.amount.toLocaleString("en-IN")}</span>
+                <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "0.6rem 0.9rem", background: "#f8fafc", border: "1px solid var(--border)", borderRadius: "6px", fontSize: "0.85rem" }}>
+                  <span style={{ color: "#475569" }}>{h.title}</span>
+                  <span style={{ fontWeight: 600, color: "#0f172a" }}>₹{h.amount.toLocaleString("en-IN")}</span>
                 </div>
               ))}
             </div>
