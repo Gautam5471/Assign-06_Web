@@ -181,3 +181,4 @@ Frontend will run at: `http://localhost:5173`
 - [x] Student flow: Fee statement, Dues breakdown, Receipt view & print
 - [x] Business rules: Zero payment rejection, Overpayment rejection
 - [x] Architecture explanation: Node.js, Express, MongoDB Atlas, React Router
+# Assign-06_Web
