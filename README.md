@@ -38,7 +38,7 @@ Built as an individual project based on the class `student_admin_project` archit
 ## 🚀 Live Demo & Repository
 - **GitHub Repository**: [https://github.com/<your-username>/Assing_06_web](https://github.com/<your-username>/Assing_06_web)
 - **Live Deployment URL (Frontend)**: [https://fee-management-mern.vercel.app](https://fee-management-mern.vercel.app)
-- **Backend Production URL**: [https://fee-management-api.onrender.com](https://fee-management-api.onrender.com)
+- **Backend Production URL**: [https://assign-06-web.onrender.com](https://assign-06-web.onrender.com)
 
 ---
 
